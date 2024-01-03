@@ -3,13 +3,13 @@
 tmp=".tmptext"
 file="$1"
 
-# Array of comment indicators
+# list of signs of comments
 comments=( '#' '\/\/' "'" '\"\"\"' "'''" 'rem\s' )
 
-# Copy the file content to the temporary file
+# sneak the file content to the temporary file
 cp "$file" "$tmp"
 
-# Loop through each comment indicator and filter lines
+# look through each lion and trash the bad ones
 for c in "${comments[@]}"; do
     grep -Ev "^\s*$c" "$tmp" > "$tmp.tmp"
     mv "$tmp.tmp" "$tmp"

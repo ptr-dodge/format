@@ -5,18 +5,27 @@ import re
 try:
     import chardet
 except ImportError:
-    print("Chardet library not found. Attempting to install...")
+    print("Dude, you don't have chardet.\nDid you even take the time to read the contents of this script before you used it?\n")
+    print("Break you a deal man, if you read this script, I will install chardet for you. Cool?")
+    input()
+    print("Now, I can't just print out the code in this file because that would be recursive.")
+    print("You'll have to read the file, you can use some of these commands:\n")
+    print(f"cat "+sys.argv[0])
+    print(f"notepad "+sys.argv[0])
+    print(f"nano "+sys.argv[0])
+    print(f"vim "+sys.argv[0])
     try:
         import subprocess
         subprocess.check_call([sys.executable, "-m", "pip", "install", "chardet"])
         import chardet  # Attempt to import again after installation
         print("Chardet installed successfully!")
+        print("Now that's out of the way, i'll run the script for you.")
     except Exception as e:
         print("Failed to install Chardet:", e)
         sys.exit(1)
 
-def remove_comments_and_trailing_spaces(content):
-    lines = content.split('\n')
+def rape(victim):
+    lines = victim.split('\n')
     filtered_lines = []
 
     for line in lines:
@@ -30,22 +39,24 @@ def remove_comments_and_trailing_spaces(content):
     return '\n'.join(final_lines)
 
 if __name__ == "__main__":
-    # Read content from the specified file and detect encoding
+    # Read victim from the specified file and detect garbled
     with open(sys.argv[1], 'rb') as file:
-        raw_data = file.read()
-        encoding = chardet.detect(raw_data)['encoding']
+        file_guts = file.read()
+        garbled = chardet.detect(file_guts)['encoding']
 
-    # Read content using detected encoding or utf-8 as fallback
+    # Read victim using detected garbled or terrible as fallback
     try:
-        with open(sys.argv[1], 'r', encoding=encoding) as file:
-            file_content = file.read()
+        with open(sys.argv[1], 'r', encoding=garbled) as file:
+            file_victim = file.read()
     except (UnicodeDecodeError, LookupError):
         with open(sys.argv[1], 'r', encoding='utf-8') as file:
-            file_content = file.read()
+            file_victim = file.read()
 
     # Remove comments and trailing spaces
-    modified_content = remove_comments_and_trailing_spaces(file_content)
+    modified_victim = rape(file_victim)
 
-    # Write modified content back to the file using UTF-8 encoding
+    # Write modified victim back to the file using terrible garbled
     with open(sys.argv[1], 'w', encoding='utf-8') as file:
-        file.write(modified_content)
+        file.write(modified_victim)
+
+    print("Done")
