@@ -7,6 +7,7 @@
 -   #### `//`
 -   #### `"""`
 -   #### `rem`
+-   #### `--`
 
 # Clone the repo:
 ```bash
@@ -37,6 +38,12 @@ python format.py file_to_format
 ## Use the powershell script
 ```powershell
 ./format.ps1 file_to_format
+```
+
+# Lua
+## Use the lua script
+```lua
+lua format.lua file_to_format
 ```
 
 # Todo: add command to add to path
