@@ -13,7 +13,7 @@ $content = Get-Content $file
 
 # loop through each line and search for things we don't want
 $filteredContent = foreach ($line in $content) {
-    if (-not ($line -match '^[ 	]*#|^[ 	]*\/\/|^[ 	]*''|^[ 	]*""""|^[ 	]*''''|^[ 	]*rem\s')) {
+    if (-not ($line -match '^[ 	]*--|^[ 	]*#|^[ 	]*\/\/|^[ 	]*''|^[ 	]*""""|^[ 	]*''''|^[ 	]*rem\s')) {
         # If these aren't the case, then we return the line.
         $line.Trim()
     }

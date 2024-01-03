@@ -30,7 +30,7 @@ def rape(victim):
 
     for line in lines:
         # Use regular expression to match patterns
-        if not re.match(r'^[ \t]*#|^[ \t]*\/\/|^[ \t]*\'|^[ \t]*\"\"\"\"|^[ \t]*\'\'\'\'|^[ \t]*rem\s', line):
+        if not re.match(r'^[ \t]*--|^[ \t]*#|^[ \t]*\/\/|^[ \t]*\'|^[ \t]*\"\"\"\"|^[ \t]*\'\'\'\'|^[ \t]*rem\s', line):
             filtered_lines.append(line.strip())
 
     # Remove empty lines

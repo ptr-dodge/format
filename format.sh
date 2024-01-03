@@ -4,7 +4,7 @@ tmp=".tmptext"
 file="$1"
 
 # list of signs of comments
-comments=( '#' '\/\/' "'" '\"\"\"' "'''" 'rem\s' )
+comments=( '#' '\/\/' "'" '\"\"\"' "'''" 'rem\s' '--')
 
 # sneak the file content to the temporary file
 cp "$file" "$tmp"
