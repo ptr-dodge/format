@@ -1,7 +1,6 @@
 # Format
 ## Remove comments and trailing newlines
 
-### Removes:
 ### Single line comments:
 -   #### `#`
 -   #### `'`
