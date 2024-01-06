@@ -1,13 +1,23 @@
 # Format
 ## Remove comments and trailing newlines
 
-### Removes all lines beginning with
+### Removes:
+### Single line comments:
 -   #### `#`
 -   #### `'`
 -   #### `//`
 -   #### `"""`
+-   #### `'''`
 -   #### `rem`
 -   #### `--`
+-   #### `;`
+### Multiline comments:
+-   #### `/* ... */`
+-   #### `<-- ... -->`
+-   #### `(* ... *)`
+-   #### `''' ... '''`
+-   #### `""" ... """`
+
 
 # Clone the repo:
 ```bash
